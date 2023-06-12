@@ -7,9 +7,7 @@ const App = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://www.googleapis.com/books/v1/volumes?q=search-terms&key=AIzaSyDrDj8Mi49mZx8wPYSI1P7hupeEGXFPfQ8"
-    )
+    fetch("https://www.googleapis.com/books/v1/volumes?q=search-terms&key=")
       .then((response) => response.json())
       .then((data) => {
         if (data.items) {

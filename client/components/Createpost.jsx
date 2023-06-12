@@ -12,7 +12,7 @@ const CreatePostPopup = ({ isOpen, onClose, onSubmit }) => {
 
   useEffect(() => {
     const getSearchResults = () => {
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyDrDj8Mi49mZx8wPYSI1P7hupeEGXFPfQ8`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=`;
 
       fetch(url)
         .then((response) => response.json())
