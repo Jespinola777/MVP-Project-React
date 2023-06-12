@@ -38,3 +38,14 @@ It uses vite as the module bundler and dotenv for configuration. It's organized 
 
 - `npm run dev` - Runs the server in watch mode.
 - `npm run start` - Starts the server (mainly used when deploying).
+
+  {books.map((book) => (
+  <div className="book" key={book.id}>
+  <h3>{book.volumeInfo.title}</h3>
+  <p>{book.volumeInfo.authors}</p>
+  <img
+            src={book.volumeInfo.imageLinks?.thumbnail}
+            alt={book.volumeInfo.title}
+          />
+  </div>
+  ))}
