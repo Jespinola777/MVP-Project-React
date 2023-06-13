@@ -1,11 +1,8 @@
 .suggestions {
-  position: absolute;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1spx solid #ddd;
   border-top-width: 0;
   list-style: none;
-  padding: 0;
-  margin: 0;
   width: fit-content;
   height: max-content;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -30,4 +27,18 @@
 
 .post-form {
   display: flex;
+}
+.custom-modal {
+  position: fixed;
+  width: 50vw;
+  height: 50vh; /* Adjust the width as needed */
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: tan;
+}
+
+main {
+  background-color: burlywood;
 }

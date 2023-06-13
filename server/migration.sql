@@ -1,7 +1,8 @@
-DROP TABLE IF EXIST User;
-DROP TABLE IF EXIST Profile;
-DROP TABLE IF EXIST Post;
-DROP TABLE IF EXIST Bookshelf;
+DROP TABLE IF EXISTS Bookshelf;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS Profile;
+DROP TABLE IF EXISTS Users;
+
 
 
 CREATE TABLE Users (
@@ -25,6 +26,7 @@ CREATE TABLE Post (
     id SERIAL PRIMARY KEY,
     profile_id INTEGER,
     book_picture TEXT,
+    book_title TEXT,
     post TEXT,
     rating INTEGER,
     FOREIGN KEY (profile_id) REFERENCES Profile (id)

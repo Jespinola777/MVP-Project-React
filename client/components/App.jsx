@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from "react";
-import ProfilePage from "./ProfilePage";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Header from "./Header";
-import "./app.css";
+import ProfilePage from "./ProfilePage";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
+  const [showProfile, setShowProfile] = useState(false);
 
-  useEffect(() => {
-    fetch("https://www.googleapis.com/books/v1/volumes?q=search-terms&key=")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.items) {
-          setBooks(data.items);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const handleProfileClick = () => {
+    setShowProfile(true);
+  };
 
   return (
     <main>
-      <Header />
-      <ProfilePage />
+      <Header onProfileClick={handleProfileClick} />
+      {showProfile && <ProfilePage />}
     </main>
   );
 };

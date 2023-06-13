@@ -5,26 +5,22 @@ import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const Header = () => {
+const Header = ({ onProfileClick }) => {
   return (
-    <Navbar style={{ backgroundColor: "tan", color: "white" }}>
+    <Navbar style={{ backgroundColor: "rgb(12, 56, 12)", color: "white" }}>
       <Container>
-        <Navbar.Brand href="#home">Book Website</Navbar.Brand>
+        <Navbar.Brand style={{ color: "white" }} href="#home">
+          Book Website
+        </Navbar.Brand>
         <Navbar.Toggle />
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-secondary">Search</Button>
-        </Form>
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text style={{ color: "white" }}>
             Signed in as: <a href="#login"></a>
           </Navbar.Text>
         </Navbar.Collapse>
+        <Button variant="secondary" onClick={onProfileClick}>
+          Profile
+        </Button>
       </Container>
     </Navbar>
   );

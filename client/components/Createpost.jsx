@@ -12,7 +12,7 @@ const CreatePostPopup = ({ isOpen, onClose, onSubmit }) => {
 
   useEffect(() => {
     const getSearchResults = () => {
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=$${searchTerm}&key=AIzaSyDrDj8Mi49mZx8wPYSI1P7hupeEGXFPfQ8`;
 
       fetch(url)
         .then((response) => response.json())
@@ -56,7 +56,12 @@ const CreatePostPopup = ({ isOpen, onClose, onSubmit }) => {
   };
 
   return (
-    <Modal ariaHideApp={false} isOpen={isOpen} onRequestClose={onClose}>
+    <Modal
+      ariaHideApp={false}
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      className="custom-modal"
+    >
       <h2>Create a Post</h2>
       <div className="container">
         <div className="search-box">
